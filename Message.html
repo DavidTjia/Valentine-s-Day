@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>My Love Message</title>
+    <style>
+      body {
+        background-color: #ffb6c1;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow-x: hidden;
+        position: relative;
+        padding: 20px;
+      }
+      .message-container {
+        background: rgba(255, 255, 255, 0.2);
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 90%;
+        text-align: center;
+      }
+      .message {
+        font-size: 1.5em;
+        font-weight: bold;
+      }
+      .heart {
+        position: absolute;
+        color: red;
+        font-size: 30px;
+        animation: fall linear infinite;
+      }
+      @keyframes fall {
+        from {
+          transform: translateY(-10vh);
+          opacity: 1;
+        }
+        to {
+          transform: translateY(100vh);
+          opacity: 0;
+        }
+      }
+      .navigation {
+        margin-top: 30px;
+        display: flex;
+        gap: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .nav-button {
+        padding: 12px 25px;
+        border: none;
+        border-radius: 25px;
+        background: #fff;
+        color: #ff4d8d;
+        font-size: 1.1em;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        background: #ffefef;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="message-container">
+      <p class="message">
+        "Happy Valentine's Day, my love! Every moment with you feels like a
+        beautiful dream, and I’m so grateful to share this journey of life with
+        you. You make my world brighter, and I can’t wait to create even more
+        memories together. I love you more than words can express! ❤️"
+      </p>
+    </div>
+    <div class="navigation">
+      <a href="love.html" class="nav-button">Click ❤️ </a>
+    </div>
+    <script>
+      function createHeart() {
+        const heart = document.createElement("div");
+        heart.innerHTML = "❤️";
+        heart.classList.add("heart");
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+          heart.remove();
+        }, 5000);
+      }
+
+      setInterval(createHeart, 800);
+    </script>
+  </body>
+</html>
